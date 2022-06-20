@@ -1,6 +1,6 @@
 # ZLog
 
-![image](https://thumbsnap.com/i/bfQkkmjg.gif)
+![image](/screenshots/screen.png)
 
 
 ### Step 1. Add the JitPack repository to your build file
