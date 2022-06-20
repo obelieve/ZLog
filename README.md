@@ -1,7 +1,6 @@
 # ZLog
 
-![image](/screenshots/screen.png)
-
+<img src="./screenshots/screen.png" title="Logo" width="200"/>
 
 ### Step 1. Add the JitPack repository to your build file
 ```
