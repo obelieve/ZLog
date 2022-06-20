@@ -16,7 +16,7 @@ allprojects {
 ### Step 2. Add the dependency
 ```
 	dependencies {
-	        implementation 'com.github.obelieve:ZLog:1.0.0'
+	        implementation 'com.github.obelieve:ZLog:0.0.1'
 	}
 ```
 
