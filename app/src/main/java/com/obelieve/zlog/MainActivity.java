@@ -24,11 +24,11 @@ public class MainActivity extends Activity {
         binding.btnAddLog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LogUtil.v(new Random().nextInt(100000)+"");
-                LogUtil.d(new Random().nextInt(100000)+"");
-                LogUtil.i(new Random().nextInt(100000)+"");
-                LogUtil.w(new Random().nextInt(100000)+"");
-                LogUtil.e(new Random().nextInt(100000)+"");
+                ZLog.v(new Random().nextInt(100000)+"");
+                ZLog.d(new Random().nextInt(100000)+"");
+                ZLog.i(new Random().nextInt(100000)+"");
+                ZLog.w(new Random().nextInt(100000)+"");
+                ZLog.e(new Random().nextInt(100000)+"");
             }
         });
         binding.btnSwitch.setOnClickListener(new View.OnClickListener() {

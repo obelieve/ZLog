@@ -36,4 +36,10 @@ allprojects {
 
     //switch show/hide log windows
     SimpleLogWindowManager.getInstance().switchLogShowOrHide();
+    //log
+    ZLog.v("log");
+    ZLog.d("log");
+    ZLog.i("log");
+    ZLog.w("log");
+    ZLog.e("log");
 ```

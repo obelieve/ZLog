@@ -22,14 +22,14 @@ public class SimpleLogWindowManager {
 
     private Context mContext;
 
-    private final LogUtil.LogBroadcastReceiver mReceiver = new LogUtil.LogBroadcastReceiver(new LogUtil.LogBroadcastReceiver.LogListener() {
+    private final ZLog.LogBroadcastReceiver mReceiver = new ZLog.LogBroadcastReceiver(new ZLog.LogBroadcastReceiver.LogListener() {
         @Override
         public void getLogMessage(int priority, String msg) {
-            LogUtil.LogWindow.getInstance(mContext).printLogMessage(priority,msg);
+            ZLog.LogWindow.getInstance(mContext).printLogMessage(priority,msg);
         }
     });
 
-    private LogUtil.LogWindow mLogWindow;
+    private ZLog.LogWindow mLogWindow;
     private boolean mShowLog = false;
 
     private SimpleLogWindowManager(){
@@ -48,8 +48,8 @@ public class SimpleLogWindowManager {
     public void register(Activity activity){
         if(mContext==null){
             mContext = activity.getApplicationContext();
-            LogUtil.builder().setBroadcast(mContext,true).setDebug(true);
-            mLogWindow = LogUtil.LogWindow.getInstance(mContext);
+            ZLog.builder().setBroadcast(mContext,true).setDebug(true);
+            mLogWindow = ZLog.LogWindow.getInstance(mContext);
         }
         activity.registerReceiver(mReceiver, mReceiver.getIntentFilter());
     }

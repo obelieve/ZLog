@@ -22,12 +22,12 @@ import android.widget.TextView;
 import java.util.Calendar;
 import java.util.LinkedList;
 
-public final class LogUtil {
+public final class ZLog {
 
-    public static final String LOG_ACTION = LogUtil.class.getName() + ".LOG_ACTION";
+    public static final String LOG_ACTION = ZLog.class.getName() + ".LOG_ACTION";
 
-    public static final String LOG_EXTRA_MSG_STRING = LogUtil.class.getName() + ".LOG_EXTRA_MSG_STRING";
-    public static final String LOG_EXTRA_PRIORITY_STRING = LogUtil.class.getName() + ".LOG_EXTRA_PRIORITY_STRING";
+    public static final String LOG_EXTRA_MSG_STRING = ZLog.class.getName() + ".LOG_EXTRA_MSG_STRING";
+    public static final String LOG_EXTRA_PRIORITY_STRING = ZLog.class.getName() + ".LOG_EXTRA_PRIORITY_STRING";
 
     // priority
     private static final int VERBOSE = 2;
@@ -351,19 +351,19 @@ public final class LogUtil {
             int start;
             int end;
             switch (priority) {
-                case LogUtil.VERBOSE:
+                case ZLog.VERBOSE:
                     color = VERBOSE_BLACK;
                     break;
-                case LogUtil.DEBUG:
+                case ZLog.DEBUG:
                     color = DEGUG_BLUE;
                     break;
-                case LogUtil.INFO:
+                case ZLog.INFO:
                     color = INFO_GREEN;
                     break;
-                case LogUtil.WARN:
+                case ZLog.WARN:
                     color = WARN_ORANGE;
                     break;
-                case LogUtil.ERROR:
+                case ZLog.ERROR:
                     color = ERROR_RED;
                     break;
                 default:
@@ -433,15 +433,15 @@ public final class LogUtil {
 
         public IntentFilter getIntentFilter() {
             IntentFilter filter = new IntentFilter();
-            filter.addAction(LogUtil.LOG_ACTION);
+            filter.addAction(ZLog.LOG_ACTION);
             return filter;
         }
 
         @Override
         public void onReceive(Context context, Intent intent) {
             int priority = intent.getIntExtra(
-                    LogUtil.LOG_EXTRA_PRIORITY_STRING, 0);
-            String msg = intent.getStringExtra(LogUtil.LOG_EXTRA_MSG_STRING);
+                    ZLog.LOG_EXTRA_PRIORITY_STRING, 0);
+            String msg = intent.getStringExtra(ZLog.LOG_EXTRA_MSG_STRING);
             mLicense.getLogMessage(priority, msg);
         }
 
