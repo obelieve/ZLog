@@ -23,8 +23,18 @@ allprojects {
 
 ### Step 3. Use
 ```xml
-    <com.obelieve.zlog.MarqueeTextSwitcher
-        android:id="@+id/mts_content"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        SimpleLogWindowManager.getInstance().register(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        SimpleLogWindowManager.getInstance().unregister(this);
+    }
+
+    //switch show/hide log windows
+    SimpleLogWindowManager.getInstance().switchLogShowOrHide();
 ```
